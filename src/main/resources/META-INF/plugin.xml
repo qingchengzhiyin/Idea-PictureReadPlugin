@@ -1,0 +1,23 @@
+<idea-plugin> <id>cn.bugstack.guide.idea.plugin</id> <name>CreateProjectByPlatform</name> <version>1.0</version> <vendor email="184172133@qq.com" url="https://bugstack.cn">louis</vendor> <description><![CDATA[
+图片恒定浏览，在右侧可查看选中的图片<br>
+<em>1. 选中系统中的图片</em>
+<em>2. 在右侧随时打开窗口查看</em>
+]]></description> <change-notes><![CDATA[
+插件开发学习功能点<br>
+<em>1. 工程搭建</em>
+<em>2. 菜单读取</em>
+<em>3. 获取配置</em>
+<em>4. 回显页面</em>
+]]>
+</change-notes>
+     <idea-version since-build="173.0"/>
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- 配置 File -> Settings -> Tools -->
+        <projectConfigurable groupId="tools" displayName="PictureRead" id="test.id"
+                             instance="com.Factory.SettingFactory"/>
+
+        <!-- 窗体 (IDEA 界面右侧) -->
+        <toolWindow id="Read-Book" secondary="false" anchor="right" factoryClass="com.Factory.ReadFactory"/>
+    </extensions>
+</idea-plugin>

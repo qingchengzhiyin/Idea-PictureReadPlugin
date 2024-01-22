@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '1.16.1'
+}
+
+group = 'com'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 17
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+intellij {
+    version = '2023.3.2' // 使用适合你的 IDEA 版本的版本号
+}
+
+test {
+    useJUnitPlatform()
+}
+
+patchPluginXml {
+    changeNotes = """
+    <![CDATA[
+    插件开发学习功能点<br>
+    <em>1. 工程搭建</em>
+    <em>2. 菜单读取</em>
+    <em>3. 获取配置</em>
+    <em>4. 回显页面</em>
+    ]]>
+    """
+}
